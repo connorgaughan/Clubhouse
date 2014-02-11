@@ -47,7 +47,7 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 		margin:0;
 		li{
 			@include adjust-font-size-to(32px);
-			height:25%;
+			height:25vh;
 			padding:2.5% 0;
 			a{
 				color:$white;
@@ -127,6 +127,39 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 //---------------------------------------------------------------------------------------------------------------------------  Portfolio
 .project-list li{
 	@include column(12);
+	position:relative;
+	overflow:hidden;
+	margin-bottom:1em;
+	&:hover{
+		.bottom{
+			top:0;
+			top:5%; 
+			left:5%;
+			@include transition-property(top);
+			@include transition-duration(.5s);
+			@include transition-timing-function(ease-in-out);
+		}
+		.top{
+			@include opacity(.15); 
+			@include transition-property(opacity);
+			@include transition-duration(.5s);
+			@include transition-timing-function(ease-in-out);
+		}
+	}
+	.top{
+		@include opacity(1); 
+		@include transition-property(opacity);
+		@include transition-duration(.5s);
+		@include transition-timing-function(ease-in-out);
+	}
+	.bottom{
+		position:absolute;
+		top:-100%;
+		left:5%;
+		@include transition-property(top);
+		@include transition-duration(.5s);
+		@include transition-timing-function(ease-in-out);
+	}
 }
 
 
@@ -360,6 +393,7 @@ footer{
 	}
 	.project-list li{
 		@include column(6);
+		margin-bottom:1em;
 	}
 	.project-images{
 		@include column(12);
@@ -390,6 +424,7 @@ footer{
 	button.view{ padding:1em 2.25em; @include adjust-font-size-to(14px); }
 	.project-list li{
 		@include column(4);
+		margin-bottom:1em;
 	}
 	.slides{
 		text-align:left;
@@ -427,6 +462,7 @@ footer{
 	}
 	.project-list li{
 		@include column(3);
+		margin-bottom:1em;
 	}
 	.project-images{
 		@include column(8);

@@ -20,18 +20,13 @@
 	<div class="container">
 		<div class="lead large">
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-					
 				<?php the_content(); ?>
-	  
-			<?php endwhile; ?>
 		</div>
 	</div>
 </section>
 <?php if(is_page(7)) :?>
 	<section class="padded">
 		<div class="container">
-			
-
 			<ul class="team-members">
 			<?php
 			    $blogusers = get_users('orderby=nicename&role=editor');
@@ -68,14 +63,12 @@
 		<div class="container">
 			<div class="lead">
 				<h2>Our Team</h2>
-				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-						
-					<?php the_excerpt(); ?>
-		  
-				<?php endwhile; ?>
+				<?php the_excerpt(); ?> 
 			</div>
 		</div>
 	</section>
 <?php endif; ?>
+
+<?php endwhile; ?>
 
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer' ) ); ?>
