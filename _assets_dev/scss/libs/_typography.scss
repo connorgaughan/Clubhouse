@@ -1,0 +1,62 @@
+//-------------------------------------------------------------------------------------------------  Import Statements
+@import "settings";
+@import "mixins";
+
+//-------------------------------------------------------------------------------------------------  Font Sizing - 16px base
+$base-font-size						: 16px;
+$base-line-height					: 6px;
+$round-to-nearest-half-line			: false;
+
+//-------------------------------------------------------------------------------------------------  Base Typography
+body{ font-family: "myriad-pro-1","myriad-pro-2",sans-serif; @include adjust-font-size-to($base-font-size, 4); color:$primary; }
+a{ text-decoration:none; color:$highlight; }
+b, strong{ font-weight:600; }
+
+//-------------------------------------------------------------------------------------------------  Headlines
+h1, .featured-hero h2 { 
+	@extend .is-uppercase;
+	@include adjust-font-size-to(18px);
+	font-weight:700;
+	margin: 0;
+} 
+
+.lead h2 { 
+	@include adjust-font-size-to(36px);
+	margin: rhythm(3, 36px) 0 rhythm(2, 36px) 0;
+	font-weight:300;
+	color:$secondary;
+} 
+
+.recent h2 { 
+	@include adjust-font-size-to(36px);
+	@extend .is-centered;
+	margin: rhythm(3, 36px) 0 rhythm(2, 36px) 0;
+	font-weight:300;
+	color:$secondary;
+} 
+
+h2 { 
+	@include adjust-font-size-to(18px);
+	margin: 0 0 rhythm(2, 18px) 0;
+	font-weight:700;
+} 
+
+h3 { 
+	@include adjust-font-size-to(16px, 3);
+	margin: rhythm(3, 16px) 0 rhythm(2, 16px) 0;
+} 
+
+.team-member h3{
+	@include adjust-font-size-to(20px);
+	margin: rhythm(3, 16px) 0 rhythm(.5, 20px) 0;
+}
+
+h4 { 
+	@include adjust-font-size-to(18px, 4);
+	margin: rhythm(5, 18px) 0 rhythm(2, 18px) 0;
+} 
+
+h5{
+	@include adjust-font-size-to(18px, 4);
+	margin: rhythm(3, 18px) 0 rhythm(3, 18px) 0;
+}
