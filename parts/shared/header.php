@@ -30,13 +30,6 @@
 	</div>
 <?php elseif ( is_author() ) : ?>
 <div class="author-hero <?php the_author_meta( 'nicename' ); ?>">
-
-	<div class="author-meta">
-		<?php 
-			echo '<h1>' . get_the_author_meta('display_name') . '<span class="title">' . get_the_author_meta('title') . '</h1>';
-		?>
-		<?php echo count_user_posts(); echo count_user_posts_by_type(get_the_author_meta('ID')); ?>
-	</div>
 </div>
 <?php else : ?>
 	<div class="hero"></div>

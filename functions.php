@@ -102,7 +102,12 @@
 	
 	// Scripts
 	function starkers_script_enqueuer() {
-		wp_register_script( 'site', get_template_directory_uri().'/_assets_production/js/site.min.js', array( 'jquery' ) );
+		wp_deregister_script( 'jquery' );
+
+		wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js','', '', true );
+		wp_enqueue_script( 'jquery' );
+		
+		wp_register_script( 'site', get_template_directory_uri().'/_assets_production/js/site.min.js', array( 'jquery' ), '', true );
 		wp_enqueue_script( 'site' );
 
 		wp_register_style( 'screen', get_stylesheet_directory_uri().'/_assets_production/css/style.css', '', '', 'screen' );
@@ -118,9 +123,4 @@
 		<li>
 			<article id="comment-<?php comment_ID() ?>">
 				<?php echo get_avatar( $comment ); ?>
-				<h4><?php comment_author_link() ?></h4>
-				<time><a href="#comment-<?php comment_ID() ?>" pubdate><?php comment_date() ?> at <?php comment_time() ?></a></time>
-				<?php comment_text() ?>
-			</article>
-		<?php endif;
-	}
+				<h4><?php comment_author_link() ?></h4

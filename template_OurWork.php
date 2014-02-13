@@ -10,7 +10,6 @@ Template Name: Our Work
 	<div class="container">
 		<?php 
 			if ( get_query_var('paged') ) $paged = get_query_var('paged');  
-			if ( get_query_var('page') ) $paged = get_query_var('page');
 			 
 			$query = new WP_Query( array( 'post_type' => 'portfolio', 'paged' => $paged ) );
 			 
@@ -18,12 +17,11 @@ Template Name: Our Work
 			<ul class="project-list">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
 				
-					<li><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
+					<li><a class="cover" href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
 						<div class="top">
 						<?php if (class_exists('MultiPostThumbnails')) : MultiPostThumbnails::the_post_thumbnail(get_post_type(), 'thumbnail-image'); endif; ?>
 					</div>
 					<div class="bottom">
-						<p>&mdash;</p>
 						<h3><?php the_title(); ?></h3>
 					</div>
 					</a></li>

@@ -111,6 +111,60 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 	padding-bottom:5em;
 }
 
+.author-hero{ 
+	padding-top:3em; 
+	padding-bottom:2em; 
+	background-size:cover; 
+	background-repeat:none; 
+	background-position:top center; 
+}
+
+.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-450x286.png); }
+
+
+@media screen and (min-width: 36em){ 
+	.author-hero{
+		padding-top:6em; 
+		padding-bottom:6em; 
+	}
+	.authro-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-600x381.png); padding-top:6em; padding-bottom:6em;  }
+}
+@media screen and (min-width: 48em){ 
+	.author-hero{ 
+		padding-top:9em; 
+		padding-bottom:9em; 
+	} 
+	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-800x509.png); }
+}
+@media screen and (min-width: 50em){ 
+	.author-hero{ 
+		padding-top:12em; 
+		padding-bottom:12em; 
+	} 
+	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-1000x636.png); }
+}
+@media screen and (min-width: 60em){ 
+	.author-hero{ 
+		padding-top:12em; 
+		padding-bottom:12em; 
+	} 
+	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-1200x763.png); }
+}
+@media screen and (min-width: 70em){ 
+	.author-hero{ 
+		padding-top:15em; 
+		padding-bottom:15em; 
+	} 
+	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-1400x890.png); }
+}
+@media screen and (min-width: 80em){ 
+	.author-hero{ 
+		padding-top:15em; 
+		padding-bottom:15em; 
+	} 
+	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover.png); }
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------------  HomePage Slider
 .slides{
@@ -129,18 +183,31 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 	@include column(12);
 	position:relative;
 	overflow:hidden;
-	margin-bottom:1em;
+	@include trailer(8);
+	img{ display:block; }
+	a.cover{ 
+		display:block;
+		height:100%;
+		width:100%;
+		z-index:2000;
+	}
+	h2{ color:$primary; }
+	p{
+		color:$secondary;
+		font-weight:300;
+		@include adjust-font-size-to(14px, 4);
+	}
+	img{ @include trailer(3); }
 	&:hover{
 		.bottom{
 			top:0;
-			top:5%; 
-			left:5%;
+			top:10%; 
 			@include transition-property(top);
 			@include transition-duration(.5s);
 			@include transition-timing-function(ease-in-out);
 		}
 		.top{
-			@include opacity(.15); 
+			@include opacity(.125); 
 			@include transition-property(opacity);
 			@include transition-duration(.5s);
 			@include transition-timing-function(ease-in-out);
@@ -155,7 +222,9 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 	.bottom{
 		position:absolute;
 		top:-100%;
-		left:5%;
+		width:80%;
+		left:10%;
+		right:10%;
 		@include transition-property(top);
 		@include transition-duration(.5s);
 		@include transition-timing-function(ease-in-out);
@@ -178,7 +247,7 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 	@include trailer(5);
 	&:hover{
 		.top{ 
-			@include opacity(.15); 
+			@include opacity(.125); 
 			@include transition-property(opacity);
 			@include transition-duration(.5s);
 			@include transition-timing-function(ease-in-out);
@@ -331,6 +400,18 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 }
 
 
+//---------------------------------------------------------------------------------------------------------------------------  Posts / News
+.post-categories{
+	list-style-type:none;
+	display:block;
+	li{
+		@extend .is-uppercase;
+		@include adjust-font-size-to(12px);
+		display:inline-block;
+		padding:0 .125em;
+	}
+}
+
 //---------------------------------------------------------------------------------------------------------------------------  Footer
 footer{
 	color:$secondary;
@@ -394,6 +475,8 @@ footer{
 	.project-list li{
 		@include column(6);
 		margin-bottom:1em;
+		min-height:300px;
+		@include trailer(3);
 	}
 	.project-images{
 		@include column(12);

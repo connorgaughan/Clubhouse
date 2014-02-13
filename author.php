@@ -19,18 +19,32 @@
 		</div>
 	</div>
 </section>
-
-<ol>
-<?php rewind_posts(); while ( have_posts() ) : the_post(); ?>
-	<li>
-		<article>
-			<h2><a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?> <?php the_time(); ?></time> <?php comments_popup_link('Leave a Comment', '1 Comment', '% Comments'); ?>
-			<?php the_content(); ?>
-		</article>
-	</li>
-<?php endwhile; ?>
-</ol>
+<section class="page">
+	<div class="container">
+		<ul class="project-list">
+		<?php rewind_posts(); while ( have_posts() ) : the_post(); ?>
+			<li class="post">
+				<a class="cover" href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
+					<?php if ( has_post_thumbnail() ) {
+						the_post_thumbnail('small');
+					} ?>
+					<?php if ( 'portfolio' == get_post_type() ) { ?>
+						<span class="project-category">Project</span>
+					<?php } else { ?>
+						<span class="project-category">Post</span>
+					<?php } ?>
+					<h2><?php the_title(); ?></h2>
+					<?php
+						$content = get_the_excerpt();
+						$trimmed_content = wp_trim_words( $content, 20, '...' );
+						echo '<p>&mdash;</p><p>' . $trimmed_content . '</p>';
+					?>
+				</a>
+			</li>
+		<?php endwhile; ?>
+		</ul>
+	</div>
+</section>
 
 <?php else: ?>
 <h2>No posts to display for <?php echo get_the_author() ; ?></h2>	
