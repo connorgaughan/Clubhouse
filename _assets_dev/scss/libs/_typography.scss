@@ -35,7 +35,7 @@ h1, .featured-hero h2 {
 	color:$secondary;
 } 
 
-h2 { 
+.project-list a h3, h2 { 
 	@include adjust-font-size-to(18px);
 	margin: 0 0 rhythm(2, 18px) 0;
 	font-weight:700;

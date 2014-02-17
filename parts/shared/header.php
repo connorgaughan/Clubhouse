@@ -24,7 +24,7 @@
 	</div>
 	
 <?php elseif ( is_front_page() ) : ?>
-	<div class="hero">
+	<div class="home hero">
 		<h1><?php the_title(); ?></h1>
 		<?php bloginfo( 'description' ); ?>	
 	</div>

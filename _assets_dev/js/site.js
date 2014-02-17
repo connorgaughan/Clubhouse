@@ -26,12 +26,3 @@ jQuery(document).ready(function($) {
 	    }, 1000);
 	})
 });
-
-jQuery(window).scroll(function(){    
-    var scroll = jQuery(window).scrollTop();
-    if (scroll > 100) {
-        jQuery('.icon-logo, .fixed, .icon-menu').addClass('white');
-    } else {
-	    jQuery('.icon-logo, .fixed, .icon-menu').removeClass('white');
-    }
-});

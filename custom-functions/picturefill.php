@@ -31,8 +31,7 @@ function responsive_image($atts){
     $output.= '    <div data-src="' . $thumb[0] . '"></div>';
     $output.= '    <div data-src="' . $small[0] . '" data-media="(min-width: 36em)"></div>';
     $output.= '    <div data-src="' . $medium[0] . '" data-media="(min-width: 48em)"></div>';
-    $output.= '    <div data-src="' . $large[0] . '" data-media="(min-width: 60em)"></div>';
-    $output.= '    <div data-src="' . $src . '" data-media="(min-width: 80em)"></div>';
+    $output.= '    <div data-src="' . $large[0] . '" data-media="(min-width: 80em)"></div>';
     $output.= '    <noscript>';
     $output.= '      <img src="' . $small[0] . '" alt="' . $caption . '">';
     $output.= '    </noscript>';

@@ -23,7 +23,7 @@
 					<?php if ( has_post_thumbnail() ) {
 						the_post_thumbnail('small');
 					} ?>
-					<?php the_category(' / '); ?>
+					<span class="project-category"><?php the_category(' / '); ?></span>
 					<h2><?php the_title(); ?></h2>
 					<?php
 						$content = get_the_excerpt();

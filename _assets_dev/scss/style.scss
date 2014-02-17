@@ -16,8 +16,8 @@
 body {width: 100%; @extend .clearfix;}
 .container {@extend .clearfix; margin: 0 auto; max-width: 1596px; padding:0 20px;}
 img{ max-width:100%; height:auto; }
-button.view{ @extend .is-inline; padding:.75em 1.25em; text-align:center; color:$white; background:$highlight; border:none; @include border-radius(8px); @include leader(5); @include adjust-font-size-to(12px); }
-button.small{ padding:.5em .875em; background:transparent; color:$highlight; border:1px solid $highlight; }
+button.view{ @extend .is-inline; padding:.75em 1.25em; text-align:center; color:$white; background:$highlight; border:none; @include border-radius(8px); @include leader(5); @include adjust-font-size-to(12px); @include transition-property(all);@include transition-duration(.25s);@include transition-timing-function(ease-in-out);&:hover{ color:$highlight; background:$white; @include transition-property(all);@include transition-duration(.25s);@include transition-timing-function(ease-in-out);} }
+button.small{ padding:1.25em 2em; background:transparent; color:$highlight; border:1px solid $highlight; @include transition-property(all);@include transition-duration(.25s);@include transition-timing-function(ease-in-out); &:hover{ border-color:$primary; color:$primary; @include transition-property(all);@include transition-duration(.25s);@include transition-timing-function(ease-in-out); } }
 .lead{ @include column(12); p{ @include adjust-font-size-to(20px, 5); @include padding-trailer(2); @include padding-leader(2); color:$tertiary; font-weight:300; } }
 .padded{ @include padding-leader(5); @include padding-trailer(7); }
 .tinted{ background:lighten($tertiary, 35%); }
@@ -34,6 +34,8 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 .main-menu{
 	display:none;
 	position:fixed;
+	top:0;
+	left:0;
 	z-index:9999;
 	height:100%;
 	width:100%;
@@ -47,8 +49,7 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 		margin:0;
 		li{
 			@include adjust-font-size-to(32px);
-			height:25vh;
-			padding:2.5% 0;
+			height:25%;
 			a{
 				color:$white;
 			}
@@ -63,13 +64,6 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 	z-index:8888	;
 	@include padding-leader(2);
 	@include padding-trailer(2);
-	@include transition-property(all);
-	@include transition-duration(.5s);
-	@include transition-timing-function(ease-in-out);
-}
-
-.fixed.white{
-	background:$highlight-opacity;
 	@include transition-property(all);
 	@include transition-duration(.5s);
 	@include transition-timing-function(ease-in-out);
@@ -119,52 +113,7 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 	background-position:top center; 
 }
 
-.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-450x286.png); }
-
-
-@media screen and (min-width: 36em){ 
-	.author-hero{
-		padding-top:6em; 
-		padding-bottom:6em; 
-	}
-	.authro-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-600x381.png); padding-top:6em; padding-bottom:6em;  }
-}
-@media screen and (min-width: 48em){ 
-	.author-hero{ 
-		padding-top:9em; 
-		padding-bottom:9em; 
-	} 
-	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-800x509.png); }
-}
-@media screen and (min-width: 50em){ 
-	.author-hero{ 
-		padding-top:12em; 
-		padding-bottom:12em; 
-	} 
-	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-1000x636.png); }
-}
-@media screen and (min-width: 60em){ 
-	.author-hero{ 
-		padding-top:12em; 
-		padding-bottom:12em; 
-	} 
-	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-1200x763.png); }
-}
-@media screen and (min-width: 70em){ 
-	.author-hero{ 
-		padding-top:15em; 
-		padding-bottom:15em; 
-	} 
-	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover-1400x890.png); }
-}
-@media screen and (min-width: 80em){ 
-	.author-hero{ 
-		padding-top:15em; 
-		padding-bottom:15em; 
-	} 
-	.author-hero.connor-gaughan{ background-image: url(../images/hero/SS_cover.png); }
-}
-
+@import "libs/heroes";
 
 //---------------------------------------------------------------------------------------------------------------------------  HomePage Slider
 .slides{
@@ -234,17 +183,17 @@ button.small{ padding:.5em .875em; background:transparent; color:$highlight; bor
 
 //---------------------------------------------------------------------------------------------------------------------------  About Us
 .lead.large {
-	@include adjust-font-size-to(24px);
+	@include adjust-font-size-to(18px);
 	p{ color:$primary; }
 }
 
 
 //---------------------------------------------------------------------------------------------------------------------------  Team
 .team-member{
+	@include trailer(5);
 	@include column(12);
 	position:relative;
 	overflow:hidden;
-	@include trailer(5);
 	&:hover{
 		.top{ 
 			@include opacity(.125); 
@@ -494,6 +443,7 @@ footer{
 
 //----------------------------------------------------------------------------------------------------------  48em
 @media screen and (min-width: 48em){
+	button.small{ padding:.5em .875em; }
 	.main-menu ul li{ @include adjust-font-size-to(84px); }
 	
 	h2 { 
