@@ -40,7 +40,7 @@
 	<section class="project-images container">
 		<?php the_content(); ?>
 	</section>
-	<footer class="project-footer">
+	<section class="project-footer">
 		<div class="container">
 			<div class="prev">
 				<?php previous_post('%', '<i class="icon-prev"></i>', 'false'); ?>
@@ -52,7 +52,7 @@
 				<?php next_post('%', '<i class="icon-next"></i>', 'false'); ?>
 			</div>
 		</div>
-	</footer>
+	</section>
 	
 <?php endwhile; ?>
 

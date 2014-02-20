@@ -16,7 +16,6 @@ function get_attachment_id_from_src($url) {
 function responsive_image($atts){
   extract( shortcode_atts( array(
     'src' => '',
-    'caption' => '',
   ), $atts ) );
   if($src != '')
   {
@@ -26,8 +25,8 @@ function responsive_image($atts){
     $small = wp_get_attachment_image_src( $img_ID, 'resp-small' );
     $thumb = wp_get_attachment_image_src( $img_ID, 'resp-thumb' );
 
-    $output = '<div class="responsive-image">';
-    $output = '  <div class="project-image" data-picture data-alt="' . $caption . '">';
+    $output.= '<div class="responsive-image">';
+    $output.= '  <div class="project-image" data-picture data-alt="' . $caption . '">';
     $output.= '    <div data-src="' . $thumb[0] . '"></div>';
     $output.= '    <div data-src="' . $small[0] . '" data-media="(min-width: 36em)"></div>';
     $output.= '    <div data-src="' . $medium[0] . '" data-media="(min-width: 48em)"></div>';
@@ -36,7 +35,6 @@ function responsive_image($atts){
     $output.= '      <img src="' . $small[0] . '" alt="' . $caption . '">';
     $output.= '    </noscript>';
     $output.= '  </div>';
-    if($caption != '') $output.= '  <p class="caption">' . $caption . '</p>';
     $output.= '</div>';
   }
 

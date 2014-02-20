@@ -1,17 +1,3 @@
-<?php
-/**
- * The template for displaying Comments.
- *
- * The area of the page that contains both current comments
- * and the comment form. The actual display of comments is
- * handled by a callback to starkers_comment() which is
- * located in the functions.php file.
- *
- * @package 	WordPress
- * @subpackage 	Starkers
- * @since 		Starkers 4.0
- */
-?>
 <div id="comments">
 	<?php if ( post_password_required() ) : ?>
 	<p>This post is password protected. Enter the password to view any comments</p>
@@ -30,10 +16,10 @@
 
 	<?php if ( have_comments() ) : ?>
 
-	<h2><?php comments_number(); ?></h2>
+	<h4><?php comments_number(); ?></h4>
 
 	<ol>
-		<?php wp_list_comments( array( 'callback' => 'starkers_comment' ) ); ?>
+		<?php wp_list_comments(); ?>
 	</ol>
 
 	<?php

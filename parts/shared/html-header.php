@@ -66,27 +66,27 @@
 	// Header for Front Page
 			if(is_front_page()){
 
-			$thumb = array("_assets_production/images/hero/JL_cover-450x286.png","_assets_production/images/hero/SS_cover-450x286.png");
+			$thumb = array("_assets_production/images/hero/JL_cover-450x286.jpg","_assets_production/images/hero/SS_cover-450x286.jpg");
 			$it = rand(0, count($thumb)-1);
   			$thumbBG = "$thumb[$it]";
 
-  			$small = array("_assets_production/images/hero/JL_cover-600x381.png","_assets_production/images/hero/SS_cover-600x381.png");
+  			$small = array("_assets_production/images/hero/JL_cover-600x381.jpg","_assets_production/images/hero/SS_cover-600x381.jpg");
 			$is = rand(0, count($small)-1);
   			$smallBG = "$small[$is]";
 
-  			$medium = array("_assets_production/images/hero/JL_cover-800x509.png","_assets_production/images/hero/SS_cover-800x509.png");
+  			$medium = array("_assets_production/images/hero/JL_cover-800x509.jpg","_assets_production/images/hero/SS_cover-800x509.jpg");
 			$im = rand(0, count($medium)-1);
   			$mediumBG = "$medium[$im]";
 
-  			$large = array("_assets_production/images/hero/JL_cover-1000x636.png","_assets_production/images/hero/SS_cover-1000x636.png");
+  			$large = array("_assets_production/images/hero/JL_cover-1000x636.jpg","_assets_production/images/hero/SS_cover-1000x636.jpg");
 			$il = rand(0, count($large)-1);
   			$largeBG = "$large[$il]";
 
-  			$largetwo = array("_assets_production/images/hero/JL_cover-1000x636.png","_assets_production/images/hero/SS_cover-1200x763.png");
+  			$largetwo = array("_assets_production/images/hero/JL_cover-1000x636.jpg","_assets_production/images/hero/SS_cover-1200x763.jpg");
 			$iltwo = rand(0, count($largetwo)-1);
   			$largetwoBG = "$largetwo[$iltwo]";
 
-			$full = array("_assets_production/images/hero/JL_cover-1400x890.png","_assets_production/images/hero/SS_cover-1400x890.png");
+			$full = array("_assets_production/images/hero/JL_cover-1400x890.jpg","_assets_production/images/hero/SS_cover-1400x890.jpg");
 			$if = rand(0, count($full)-1);
   			$fullBG = "$full[$if]";
 			

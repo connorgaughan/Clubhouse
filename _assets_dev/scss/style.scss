@@ -21,6 +21,8 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 .lead{ @include column(12); p{ @include adjust-font-size-to(20px, 5); @include padding-trailer(2); @include padding-leader(2); color:$tertiary; font-weight:300; } }
 .padded{ @include padding-leader(5); @include padding-trailer(7); }
 .tinted{ background:lighten($tertiary, 35%); }
+.no-hero{ @extend .clearfix; width:100%; display:block; height:75px; }
+.syntaxhighlighter{ font-size:.75em !important; }
 
 
 //---------------------------------------------------------------------------------------------------------------------------  Extends
@@ -90,7 +92,7 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 
 
 //---------------------------------------------------------------------------------------------------------------------------  Hero
-.hero, .featured-hero{
+.hero, .featured-hero, .author-hero{
 	@extend .is-centered;
 	background:$highlight;
 	color:$white;
@@ -122,7 +124,7 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 	.left, .right{ @include column(12); float:right; }
 	img{
 		display:block;
-		margin:0 auto;
+		margin:1em auto 0 auto;
 	}
 }
 
@@ -133,20 +135,30 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 	position:relative;
 	overflow:hidden;
 	@include trailer(8);
-	img{ display:block; }
-	a.cover{ 
-		display:block;
-		height:100%;
-		width:100%;
-		z-index:2000;
+	img{ display:block; @include trailer(3); }
+	h2 a{ 
+		color:$primary; 
+		@include transition-property(color);
+		@include transition-duration(.25s);
+		@include transition-timing-function(ease-in-out); 
+		&:hover{
+			color:$highlight;
+			@include transition-property(color);
+			@include transition-duration(.25s);
+			@include transition-timing-function(ease-in-out); 
+		}
 	}
-	h2{ color:$primary; }
 	p{
 		color:$secondary;
 		font-weight:300;
 		@include adjust-font-size-to(14px, 4);
 	}
-	img{ @include trailer(3); }
+	a:hover ~ h2 a{
+		color:$highlight;
+		@include transition-property(color);
+		@include transition-duration(.25s);
+		@include transition-timing-function(ease-in-out); 
+	}
 	&:hover{
 		.bottom{
 			top:0;
@@ -297,7 +309,15 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 	color:$tertiary;
 }
 
+.single-article{
+	@include adjust-font-size-to(18px, 4);
+	@include padding-trailer(2);
+	color:$secondary;
+	p{ @include padding-trailer(4); }
+}
+
 .project-category{
+	color:$highlight;
 	@extend .is-uppercase;
 	@include adjust-font-size-to(12px);
 }
@@ -361,6 +381,15 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 	}
 }
 
+.post-description{
+	@include adjust-font-size-to(12px);
+	color:lighten($tertiary, 15%);
+	font-weight:300;
+	@extend .is-centered;
+	@include padding-leader(5);
+	@include padding-trailer(5);
+}
+
 //---------------------------------------------------------------------------------------------------------------------------  Footer
 footer{
 	color:$secondary;
@@ -411,8 +440,11 @@ footer{
 		@include adjust-font-size-to(24px);
 		font-weight:500;
 	} 
-	.intro{
+	.intro, .single-article{
 		font-weight:300;
+	}
+	.single-article{
+		@include adjust-font-size-to(22px, 5);
 	}
 	.hero, .featured-hero{
 		@include trailer(10);
@@ -424,10 +456,10 @@ footer{
 	.project-list li{
 		@include column(6);
 		margin-bottom:1em;
-		min-height:300px;
+		min-height:325px;
 		@include trailer(3);
 	}
-	.project-images{
+	.project-images, .single-article{
 		@include column(12);
 		img{
 			display:block; margin:0 auto;
@@ -462,12 +494,12 @@ footer{
 	.slides{
 		text-align:left;
 		.left{
-			@include column(3);
+			@include column(7);
+			@include pull(1);
 			float:right; 
 		}
 		.right{
-			@include column(7);
-			@include pull(1);
+			@include column(3);
 			float:right; 
 		}
 	}
@@ -477,12 +509,14 @@ footer{
 //----------------------------------------------------------------------------------------------------------  60em
 @media screen and (min-width: 60em){
 	.main-menu ul li{ @include adjust-font-size-to(120px); }
-	
 	.intro{
 		@include column(7);
 		@include push(1);
 		float:right;
 		@include adjust-font-size-to(32px, 7);
+	}
+	.single-article{
+		@include adjust-font-size-to(24px, 6);
 	}
 	.project-details{
 		@include column(3);
@@ -497,7 +531,7 @@ footer{
 		@include column(3);
 		margin-bottom:1em;
 	}
-	.project-images{
+	.project-images, .single-article{
 		@include column(8);
 		@include push(2);
 		@include pull(2);

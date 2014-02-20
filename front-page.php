@@ -5,9 +5,7 @@
 		<h2>Recent Work</h2>
 		<?php 
 			if ( get_query_var('paged') ) $paged = get_query_var('paged');  
-			
-			if ( get_query_var('page') ) $paged = get_query_var('page');
-		 
+					 
 			$query = new WP_Query( array( 'post_type' => 'portfolio', 'posts_per_page'=> 5, 'paged' => $paged ) );
 		 
 			if ( $query->have_posts() ) : ?>
@@ -19,12 +17,17 @@
 				
 				<li class="recent-work">
 				
-					<div class="left">
+					<div class="right">
 						<h3 class="title"><?php the_title(); ?></h3>
+						<?php
+							$content = get_the_excerpt();
+							$trimmed_content = wp_trim_words( $content, 20, '...' );
+							echo '<p>&mdash;</p><p>' . $trimmed_content . '</p>';
+						?>
 						<a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><button class="view small">View Project</button></a>
 					</div>
 					
-					<div class="right">
+					<div class="left">
 						<?php 
 		
 							if (class_exists('MultiPostThumbnails')) : 

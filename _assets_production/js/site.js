@@ -1192,6 +1192,11 @@
 			jQuery('.main-menu').fadeOut('slow');
 		});
 	});
+	jQuery('.more-comments').on('click', function(){
+		$('html, body').animate({
+	        scrollTop: $('#disqus_thread').offset('75').top
+	    }, 1000);
+	});
 	jQuery('.flexslider').flexslider({
 		animation: "fade",
 		slideshow: true,

@@ -9,25 +9,27 @@ $round-to-nearest-half-line			: false;
 
 //-------------------------------------------------------------------------------------------------  Base Typography
 body{ font-family: "myriad-pro-1","myriad-pro-2",sans-serif; @include adjust-font-size-to($base-font-size, 4); color:$primary; }
-a{ text-decoration:none; color:$highlight; }
+a{ text-decoration:none; color:$highlight; @include transition-property(color);@include transition-duration(.25s);@include transition-timing-function(ease-in-out); &:hover{ color:#000000; @include transition-property(color);@include transition-duration(.25s);@include transition-timing-function(ease-in-out); } }
 b, strong{ font-weight:600; }
+em{ font-style:italic; }
 
 //-------------------------------------------------------------------------------------------------  Headlines
-h1, .featured-hero h2 { 
+.home h1, .featured-hero h2, .author-hero h1 { 
 	@extend .is-uppercase;
 	@include adjust-font-size-to(18px);
 	font-weight:700;
 	margin: 0;
 } 
 
-.lead h2 { 
+.lead h2, .cat-header h3, .lead h1{ 
 	@include adjust-font-size-to(36px);
 	margin: rhythm(3, 36px) 0 rhythm(2, 36px) 0;
 	font-weight:300;
 	color:$secondary;
+	text-transform: capitalize;
 } 
 
-.recent h2 { 
+.recent h2, .single-article h2 { 
 	@include adjust-font-size-to(36px);
 	@extend .is-centered;
 	margin: rhythm(3, 36px) 0 rhythm(2, 36px) 0;
@@ -35,7 +37,7 @@ h1, .featured-hero h2 {
 	color:$secondary;
 } 
 
-.project-list a h3, h2 { 
+.project-list a h3, h2, .recent-work h3, .single-article h3 { 
 	@include adjust-font-size-to(18px);
 	margin: 0 0 rhythm(2, 18px) 0;
 	font-weight:700;
