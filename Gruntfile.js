@@ -9,14 +9,14 @@ module.exports = function(grunt) {
       },
       dist: {
         src: ['_assets_dev/js/*.js'],
-        dest: '_assets_production/js/site.js'
+        dest: '_assets_production/js/site.min.js'
       }
     },
     // Run this before deployement to live, it will minify all scripts
     uglify: {
       my_target: {
         files: {
-          '_assets_production/js/site.min.js': ['_assets_production/js/site.js']
+          '_assets_production/js/site.min.js': ['_assets_production/js/site.min.js']
         }
       }
     },
@@ -56,15 +56,24 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
           files: ['_assets_dev/js/*.js'],
-          tasks: ['concat'],
+          tasks: ['concat', 'uglify'],
+          options: {
+            livereload: true,
+          }
       },
       styles: {
         files: ['_assets_dev/scss/*.scss', '_assets_dev/scss/libs/*.scss'],
         tasks: ['compass'],
+        options: {
+          livereload: true,
+        }
       },
       imgs: {
         files: ['_assets_dev/images/**/*.png','_assets_dev/images/**/*.jpg'],
         task: ['smushit'],
+        options: {
+          livereload: true,
+        }
       },
     },
   });
@@ -76,7 +85,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-smushit');
 
-  grunt.registerTask('default', ['concat', 'compass']);
+  grunt.registerTask('default', ['concat', 'compass', 'uglify']);
   grunt.registerTask('min', ['uglify']);
 
 };

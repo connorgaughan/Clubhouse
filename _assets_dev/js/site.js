@@ -29,5 +29,6 @@ jQuery(document).ready(function($) {
 		$('html, body').animate({
 	        scrollTop: $('.full-disclosure').offset().top
 	    }, 1000);
-	})
+	});
+	jQuery('.lead').addClass('js');
 });
