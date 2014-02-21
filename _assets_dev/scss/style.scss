@@ -53,7 +53,18 @@ button.small{ padding:1.25em 2em; background:transparent; color:$highlight; bord
 			@include adjust-font-size-to(32px);
 			height:25%;
 			a{
+				display:block;
+				width:100%;
 				color:$white;
+				@include transition-property(background);
+				@include transition-duration(.25s);
+				@include transition-timing-function(ease-in-out);
+				&:hover{
+					background:$highlight;
+					@include transition-property(background);
+					@include transition-duration(.25s);
+					@include transition-timing-function(ease-in-out);
+				}
 			}
 		}
 	}
