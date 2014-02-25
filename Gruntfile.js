@@ -58,21 +58,21 @@ module.exports = function(grunt) {
           files: ['_assets_dev/js/*.js'],
           tasks: ['concat', 'uglify'],
           options: {
-            livereload: true,
+            livereload: 1377,
           }
       },
       styles: {
         files: ['_assets_dev/scss/*.scss', '_assets_dev/scss/libs/*.scss'],
         tasks: ['compass'],
         options: {
-          livereload: true,
+          livereload: 1377,
         }
       },
       imgs: {
         files: ['_assets_dev/images/**/*.png','_assets_dev/images/**/*.jpg'],
         task: ['smushit'],
         options: {
-          livereload: true,
+          livereload: 1377,
         }
       },
     },

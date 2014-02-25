@@ -12,6 +12,7 @@
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 		<script type="text/javascript" src="//use.typekit.net/teh4ghd.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':1377/livereload.js?snipver=1"></' + 'script>')</script>
 		<?php wp_head(); ?>
 		<?php
 	// Header for Pages
