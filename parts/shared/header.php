@@ -19,7 +19,7 @@
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
 				<h1>Our Work</h1>
 				<p class="title">Featured Work: <?php the_title(); ?></p>
-				<a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><button class="view">View Project</button></a>
+				<a class="view" href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">View Project</a>
 			<?php endwhile; wp_reset_postdata(); ?>
 		<?php endif; ?>
 	</div>

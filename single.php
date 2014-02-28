@@ -17,7 +17,7 @@
 			<header>
 				<h2><?php the_title(); ?></h2>
 				<p class="post-description">
-					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'display_name' ); ?></a> wrote this on <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date('M, d'); ?> </time> | posted in <?php the_category(' / '); ?>
+					<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author_meta( 'display_name' ); ?></a> wrote this on <time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_date('M, d'); ?> </time> | posted in <?php the_category(' / '); ?>
 				</p>
 			</header>
 			<?php the_content(); ?>			

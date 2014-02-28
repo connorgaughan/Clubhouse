@@ -13,6 +13,8 @@ a{ text-decoration:none; color:$highlight; @include transition-property(color);@
 b, strong{ font-weight:600; }
 em{ font-style:italic; }
 
+.single-article ul, .single-article ol{ padding:0 2.5em; }
+
 //-------------------------------------------------------------------------------------------------  Headlines
 .home h1, .featured-hero h2, .author-hero h1 { 
 	@extend .is-uppercase;

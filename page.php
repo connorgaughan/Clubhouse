@@ -53,7 +53,7 @@
 			    	echo '<li><a href="mailto:' . $user->user_email . '" title="Email ' . $user->display_name . '"><i class="icon-mail"></i></a></li>';
 			    	echo '</ul>';
 			    	echo '<div class="container snippets"><div class="snippet"><p class="number">' . $posts . '</p><p>posts</p></div><div class="snippet"><p class="number">' . $projects . '</p><p>projects</p></div></div>';
-			    	echo '<a href="' . $link . '" title="View' . $user->disaply_name . '&rsquo;s Profile"><button class="view small">View Profile</button></a>';
+			    	echo '<a class="view small"href="' . $link . '" title="View' . $user->disaply_name . '&rsquo;s Profile">View Profile</a>';
 			    	echo '</div>';
 			        echo '</li>';
 			    }

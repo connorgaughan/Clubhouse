@@ -24,7 +24,7 @@
 							$trimmed_content = wp_trim_words( $content, 20, '...' );
 							echo '<p>&mdash;</p><p>' . $trimmed_content . '</p>';
 						?>
-						<a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark"><button class="view small">View Project</button></a>
+						<a class="view small" href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">View Project</a>
 					</div>
 					
 					<div class="left">
@@ -55,7 +55,7 @@
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 					
 				<?php the_content(); ?>
-				<a href="<?php print bloginfo('url'); ?>/about" title="Permalink to About Us" rel="bookmark"><button class="view small">About Us</button></a>
+				<a class="view small" href="<?php print bloginfo('url'); ?>/about" title="Permalink to About Us" rel="bookmark">About Us</a>
 	  
 			<?php endwhile; ?>
 		</div>
