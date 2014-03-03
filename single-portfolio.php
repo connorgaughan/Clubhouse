@@ -7,7 +7,8 @@
 			<ul>
 				<li>&mdash;</li>
 				<?php 
-					$url = get_post_meta($post->ID, 'dbt_url', true);
+					$website = get_post_meta($post->ID, 'dbt_url', true);
+					$url = preg_replace('#^https?://#', '', rtrim($website,'/'));
 					$client_name = get_post_meta($post->ID, 'dbt_client_name', true);
 					$designers = get_post_meta($post->ID, 'dbt_designers', true);
 					$photographers = get_post_meta($post->ID, 'dbt_photographers', true);
@@ -25,7 +26,7 @@
 					}
 	    	
 					if ($url) { 
-						echo "<li><b>Client:</b> <a href='$url' target='_blank'>$client_name</a></li>"; 
+						echo "<li><b>Client:</b> <a href='http://$url' target='_blank'>$client_name</a></li>"; 
 					} else {
 						echo "<li><b>Client:</b> $client_name</li>";
 					}

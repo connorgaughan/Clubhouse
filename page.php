@@ -46,10 +46,18 @@
 			    	echo '<div class="bottom"><h3>' . $user->display_name . '</h3>';
 			    	echo '<p class="team-title">' . $title . '</p><p class="team-location">' . $location . '</p>';
 			    	echo '<ul class="icons">';
-			    	echo '<li><a href="' . $twitter . '" title="Twitter"><i class="icon-twitter"></i></a></li>';
-			    	echo '<li><a href="' . $linkedin . '" title="Linkedin"><i class="icon-linkedin"></i></a></li>';
-			    	echo '<li><a href="' . $instagram . '" title="Instagram"><i class="icon-instagram"></i></a></li>';
-			    	echo '<li><a href="' . $dribbble . '" title="Dribbble"><i class="icon-dribbble"></i></a></li>';
+			    	if ($twitter){
+			    		echo '<li><a href="' . $twitter . '" title="Twitter"><i class="icon-twitter"></i></a></li>';
+			    	}
+			    	if($linkedin){
+			    		echo '<li><a href="' . $linkedin . '" title="Linkedin"><i class="icon-linkedin"></i></a></li>';
+			    	}
+			    	if($instagram){
+			    		echo '<li><a href="' . $instagram . '" title="Instagram"><i class="icon-instagram"></i></a></li>';
+			    	}
+			    	if($dribbble){
+			    		echo '<li><a href="' . $dribbble . '" title="Dribbble"><i class="icon-dribbble"></i></a></li>';
+			    	}
 			    	echo '<li><a href="mailto:' . $user->user_email . '" title="Email ' . $user->display_name . '"><i class="icon-mail"></i></a></li>';
 			    	echo '</ul>';
 			    	echo '<div class="container snippets"><div class="snippet"><p class="number">' . $posts . '</p><p>posts</p></div><div class="snippet"><p class="number">' . $projects . '</p><p>projects</p></div></div>';

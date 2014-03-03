@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         dest: '_assets_production/js/site.min.js'
       }
     },
-    // Run this before deployement to live, it will minify all scripts
+    // Minify all scripts
     uglify: {
       my_target: {
         files: {

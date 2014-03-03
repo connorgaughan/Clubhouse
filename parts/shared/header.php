@@ -13,7 +13,7 @@
 		<?php 
 			if ( get_query_var('paged') ) $paged = get_query_var('paged');  
 	 
-			$query = new WP_Query( array( 'post_type' => 'portfolio', 'featured' => 'main', 'paged' => $paged ) );
+			$query = new WP_Query( array( 'posts_per_page' => 1, 'post_type' => 'portfolio', 'featured' => 'main', 'paged' => $paged ) );
 	 
 			if ( $query->have_posts() ) : ?>
 			<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
