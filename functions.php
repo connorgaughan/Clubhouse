@@ -59,12 +59,10 @@
 	
 	// Register Nav Menu
 	register_nav_menus(array('primary' => 'Primary Navigation'));
-
 	
 	// Actions and Filters
 	add_action( 'wp_enqueue_scripts', 'starkers_script_enqueuer' );
 	add_filter( 'body_class', array( 'Starkers_Utilities', 'add_slug_to_body_class' ) );
-
 
 	// Custom Post Types
 	require_once( 'custom-functions/meta_secondary-headline.php' );
@@ -73,8 +71,12 @@
 	require_once( 'custom-functions/picturefill.php' );
 	require_once( 'custom-functions/contactForm.php' );
 	require_once( 'custom-functions/sendForm.php' );
-	// require_once( 'custom-functions/admin.php' );
-	
+
+	// Filter Wordpress Images Output to Accomodate for our Picturefill Polyfill Shortcode
+	function rimg_insert_image($html, $id, $caption, $title, $align, $url){
+		return '[rimg src="'.$url.'"]';
+	}	
+	add_filter('image_send_to_editor', 'rimg_insert_image', 10, 9);
 	
 	// Multiple Post Thumbnails
 	if (class_exists('MultiPostThumbnails')) {
