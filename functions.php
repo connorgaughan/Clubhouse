@@ -71,6 +71,8 @@
 	require_once( 'custom-functions/meta_team-info.php' );
 	require_once( 'custom-functions/post-types.php' );
 	require_once( 'custom-functions/picturefill.php' );
+	require_once( 'custom-functions/contactForm.php' );
+	require_once( 'custom-functions/sendForm.php' );
 	// require_once( 'custom-functions/admin.php' );
 	
 	

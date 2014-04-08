@@ -13,7 +13,7 @@
 <section class="page">
 	<div class="container">
 		<?php if ( have_posts() ): ?>
-		<ul class="project-list">
+		<ul class="list">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<li class="post">
 				<?php if ( has_post_thumbnail() ) {

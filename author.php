@@ -21,7 +21,7 @@
 </section>
 <section class="page">
 	<div class="container">
-		<ul class="project-list">
+		<ul class="list">
 		<?php rewind_posts(); while ( have_posts() ) : the_post(); ?>
 			<li class="post">
 				<?php if ( has_post_thumbnail() ) {

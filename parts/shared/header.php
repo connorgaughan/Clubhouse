@@ -34,6 +34,14 @@
 	<h1><?php the_author_meta( 'display_name' ); ?></h1>
 	<p><?php the_author_meta( 'title' ); ?></p>
 </div>
+<?php elseif ( is_page(7) ) : ?>
+	<div class="hero">
+		<figure class="mw">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/_assets_production/images/mid-west.svg" alt="Mid-West">
+		</figure>
+		<h1><?php the_title(); ?></h1>
+		<?php bloginfo( 'description' ); ?>	
+	</div>
 <?php else : ?>
 	<?php if( is_home() || is_category() || is_archive() ) {
 		echo '<span class="no-hero"></span>';

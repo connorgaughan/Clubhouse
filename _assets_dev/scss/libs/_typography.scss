@@ -16,7 +16,7 @@ em{ font-style:italic; }
 .single-article ul, .single-article ol{ padding:0 2.5em; }
 
 //-------------------------------------------------------------------------------------------------  Headlines
-.home h1, .featured-hero h2, .author-hero h1 { 
+.home h1, .featured-hero h2, .author-hero h1, .about-us h1 { 
 	@extend .is-uppercase;
 	@include adjust-font-size-to(18px);
 	font-weight:700;

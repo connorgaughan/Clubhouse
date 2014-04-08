@@ -14,7 +14,7 @@ Template Name: Our Work
 			$query = new WP_Query( array( 'post_type' => 'portfolio', 'paged' => $paged ) );
 			 
 			if ( $query->have_posts() ) : ?>
-			<ul class="project-list">
+			<ul class="list">
 				<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
 				
 					<li><a class="cover" href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">

@@ -19,7 +19,10 @@
 <section class="padded">
 	<div class="container">
 		<div class="lead large">
-			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+			<?php if( is_page( 13 ) ){ contactForm(); } ?>
+			<?php if( is_page( 'thanks' ) ){ echo '<p>Thanks '.$_SESSION['fullName'].',</p> 
+                <p>We&rsquo;ll look over your work and if you look like a good fit we&rsquo;ll be in contact.</p>'; }
+                elseif ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 				<?php the_content(); ?>
 		</div>
 	</div>
@@ -68,6 +71,8 @@
 			?>
 			</ul>
 		</div>
+	</section>
+	<section>
 		<div class="container">
 			<div class="lead">
 				<h2>Our Team</h2>

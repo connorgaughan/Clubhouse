@@ -1,4 +1,4 @@
-//---------------------------------------------------------------------------------------------------------------------------  Import Statements
+//------------------------------------------------------------------------------------------------  Import Statements
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
 @import "compass/utilities";
@@ -12,7 +12,7 @@
 @import "libs/icons";
 
 
-//---------------------------------------------------------------------------------------------------------------------------  General Styles
+//------------------------------------------------------------------------------------------------  General Styles
 body {width: 100%; @extend .clearfix;}
 .container {@extend .clearfix; margin: 0 auto; max-width: 1596px; padding:0 20px;}
 img{ max-width:100%; height:auto; }
@@ -25,14 +25,14 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 .syntaxhighlighter{ font-size:.75em !important; }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Extends
+//------------------------------------------------------------------------------------------------  Extends
 .is-uppercase {text-transform:uppercase; letter-spacing:1px;}
 .is-inline{@include inline-block();}
 .is-centered{text-align:center;}
 .clearfix{@include clearfix();}
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Header
+//------------------------------------------------------------------------------------------------  Header
 .main-menu{
 	display:none;
 	position:fixed;
@@ -109,7 +109,7 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Hero
+//------------------------------------------------------------------------------------------------  Hero
 .hero, .featured-hero, .author-hero{
 	@extend .is-centered;
 	background:$highlight;
@@ -118,6 +118,10 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 	a{
 		color:$white;
 	}
+}
+
+.author-hero.josh-levan{
+	color:$primary;
 }
 
 .home .hero{
@@ -135,7 +139,7 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 
 @import "libs/heroes";
 
-//---------------------------------------------------------------------------------------------------------------------------  HomePage Slider
+//------------------------------------------------------------------------------------------------  HomePage Slider
 .slides{
 	@include padding-leader(2);
 	@extend .is-centered;
@@ -147,8 +151,8 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Portfolio
-.project-list li{
+//------------------------------------------------------------------------------------------------  Portfolio
+.list li{
 	@include column(12);
 	position:relative;
 	overflow:hidden;
@@ -211,17 +215,17 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  About Us
+//------------------------------------------------------------------------------------------------  About Us
 .lead.large {
 	@include adjust-font-size-to(18px);
 	p{ color:$primary; }
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Team
+//------------------------------------------------------------------------------------------------  Team
 .team-member{
-	@include trailer(5);
 	@include column(12);
+	@include trailer(5);
 	position:relative;
 	overflow:hidden;
 	&:hover{
@@ -312,7 +316,7 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Single Portfolio
+//------------------------------------------------------------------------------------------------  Single Portfolio
 .single-portfolio{
 	background:#fafafa;
 }
@@ -391,7 +395,7 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Posts / News
+//------------------------------------------------------------------------------------------------  Posts / News
 .post-categories{
 	list-style-type:none;
 	display:block;
@@ -412,7 +416,86 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 	@include padding-trailer(5);
 }
 
-//---------------------------------------------------------------------------------------------------------------------------  Footer
+
+//------------------------------------------------------------------------------------------------  Forms
+
+input[type='text'], input[type='email'], input[type='file'], input[type='url'], select, textarea{
+	-webkit-appearance: none;
+	border-radius:none;
+	padding:.5em .75em;
+	width:100%;
+	background:$white;
+	border:1px solid $secondary;
+	@include transition-property(border-color);
+	@include transition-duration(.125s);
+	@include transition-timing-function(ease-in-out);
+	&:focus{
+		outline:none;
+		border-color:$highlight;
+		@include transition-property(border-color);
+		@include transition-duration(.125s);
+		@include transition-timing-function(ease-in-out);
+	}
+}
+
+label{ 
+	@include adjust-font-size-to(10px); 
+	display:block;
+	padding:1.5em 0 .25em 0;
+	font-weight:700;
+	color:$primary;
+}
+
+input[type='submit']{
+	@extend .is-inline; 
+	padding:1em 2.5em; 
+	text-align:center; 
+	color:$white; 
+	background:$highlight; 
+	border: 1px solid $white; 
+	@include leader(5); 
+	@include adjust-font-size-to(12px); 
+	@include transition-property(all);
+	@include transition-duration(.25s);
+	@include transition-timing-function(ease-in-out);
+	&:hover{ 
+		color:$highlight; 
+		background:$white;
+		border: 1px solid $highlight; 
+		@include transition-property(all);
+		@include transition-duration(.25s);
+		@include transition-timing-function(ease-in-out);
+	}
+	&:active{
+		outline:none;
+	}
+}
+
+form .single-article p{
+	padding:0;
+}
+
+.full{ 
+	display:block; 
+	float:left;
+	width:97%; 
+}
+
+.half{
+	display:block; 
+	float:left;
+	width:44%;
+	margin-right:3.3333333333%;
+}
+
+.third{ 
+	display:block; 
+	float:left;
+	width:30%; 
+	margin-right:3.3333333333%;
+}
+
+//------------------------------------------------------------------------------------------------  Footer
 footer{
 	color:$secondary;
 	.footer-top{
@@ -447,7 +530,7 @@ footer{
 }
 
 
-//---------------------------------------------------------------------------------------------------------------------------  Media Queries
+//------------------------------------------------------------------------------------------------  Media Queries
 
 //----------------------------------------------------------------------------------------------------------  36em
 @media screen and (min-width: 36em){ 
@@ -475,12 +558,12 @@ footer{
 		padding-top:10em;
 		padding-bottom:10em;
 	}
-	.project-list li{
+	.list li{
 		@include column(6);
 		margin-bottom:1em;
-		min-height:325px;
 		@include trailer(3);
 	}
+	.blog .list li, .author .list li, .category .list li, .archive .list li{ min-height:325px; }
 	.project-images{
 		@include column(12);
 		img{
@@ -491,7 +574,7 @@ footer{
 		}
 	}
 	footer .footer-top .footer-module{ @include column(6); @include trailer(5); }
-	.team-member{ @include column(6); }
+	.team-member{ @include column(6); @include trailer(5);}
 }
 
 
@@ -509,7 +592,7 @@ footer{
 		padding-bottom:15em;
 	}
 	button.view{ padding:1em 2.25em; @include adjust-font-size-to(14px); }
-	.project-list li{
+	.list li{
 		@include column(4);
 		margin-bottom:1em;
 	}
@@ -549,7 +632,7 @@ footer{
 		padding-top:20em;
 		padding-bottom:20em;
 	}
-	.project-list li{
+	.list li{
 		@include column(3);
 		margin-bottom:1em;
 	}
@@ -580,7 +663,7 @@ footer{
 @media screen and (min-width: 70em){
 	footer .footer-top .footer-module{ @include column(2); &:first-child{ @include push(2); } }
 	footer .footer-bottom p{ @include push(2); }
-	.team-member{ @include column(3); }
+	.team-member{ @include column(3);  @include trailer(0); }
 }
 
 
