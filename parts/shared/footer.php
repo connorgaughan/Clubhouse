@@ -7,12 +7,12 @@
 					<p>&copy;<?php echo date("Y"); ?> All rights reserved.</p>
 				</div>
 				<div class="footer-module">
-					<p>Cleveland, OH & Chicago, IL</p>
+					<p>Cleveland, OH &amp; Chicago, IL</p>
 					<p><a href="mailto:hello@clubhousecreative.com">hello@clubhousecreative.com</a></p>
 				</div>
 				<div class="footer-module">
-					<p>Need a Quote?</p>
-					<p><a href="mailto:inqueries@clubhousecreative.com">inqueries@clubhousecreative.com</a></p>
+					<p>Have an Inquery?</p>
+					<p><a href="<?php echo get_bloginfo('url'); ?>/contact">Get in touch</a></p>
 				</div>
 				<div class="footer-module">
 					<p>Connect With Us</p>

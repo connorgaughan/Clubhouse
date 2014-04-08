@@ -24,7 +24,11 @@ function contactForm(){
 	if ( $page == NULL ) {
 		echo '
 			<form method="post" action="' . $this_page .'">
-				<div class="single-article">
+				<div class="single-article">';
+    if( !isset($_POST['toDo']) ){
+            echo '<h1>Get in Touch</h1>';
+        }
+    echo'
                     <div class="full">
                         <label for="toDo">What would you like to do?</label>
     					<select name="toDo">
@@ -116,7 +120,7 @@ function contactForm(){
             echo '
                 <form method="post" action="' . $this_page .'">
                     <div class="single-article">
-                        <p>Get In Touch</p>
+                        <p>General Inquery</p>
 
                         <label for="fullName">Name</label>
                         <input type="text" name="fullName" />
