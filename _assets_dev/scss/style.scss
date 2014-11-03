@@ -163,45 +163,19 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 	overflow:hidden;
 	@include trailer(8);
 	img{ display:block; @include trailer(3); }
-	h2 a{ 
-		color:$primary; 
-		@include transition-property(color);
-		@include transition-duration(.25s);
-		@include transition-timing-function(ease-in-out); 
-		&:hover{
-			color:$highlight;
-			@include transition-property(color);
-			@include transition-duration(.25s);
-			@include transition-timing-function(ease-in-out); 
-		}
-	}
-	p{
-		color:$secondary;
-		font-weight:300;
-		@include adjust-font-size-to(14px, 4);
-	}
-	a:hover ~ h2 a{
-		color:$highlight;
-		@include transition-property(color);
-		@include transition-duration(.25s);
-		@include transition-timing-function(ease-in-out); 
-	}
 	&:hover{
 		.bottom{
 			top:0;
-			top:10%; 
-			@include transition-property(top);
-			@include transition-duration(.5s);
-			@include transition-timing-function(ease-in-out);
+			top:10%;
 		}
 		.top{
-			@include opacity(.125); 
-			@include transition-property(opacity);
-			@include transition-duration(.5s);
-			@include transition-timing-function(ease-in-out);
+			@include opacity(.125);
 		}
 	}
 	.top{
+		img{
+			margin: 0 auto;
+		}
 		@include opacity(1); 
 		@include transition-property(opacity);
 		@include transition-duration(.5s);
@@ -213,9 +187,18 @@ a.small{ padding:1.25em 2.5em; background:transparent; color:$highlight; border:
 		width:80%;
 		left:10%;
 		right:10%;
+		@extend .is-centered;
+		@include adjust-font-size-to(18px);
+		h3{ color: $primary; }
 		@include transition-property(top);
 		@include transition-duration(.5s);
 		@include transition-timing-function(ease-in-out);
+		.cat{
+			@extend .is-uppercase;
+			@include adjust-font-size-to(12px);
+			font-weight:600;
+			color: $highlight;
+		}
 	}
 }
 

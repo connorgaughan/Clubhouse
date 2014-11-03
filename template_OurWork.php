@@ -23,6 +23,7 @@ Template Name: Our Work
 					</div>
 					<div class="bottom">
 						<h3><?php the_title(); ?></h3>
+						<p class="cat"><?php $terms = the_terms($post->ID, 'project_type'); echo $term->name; ?></p>
 					</div>
 					</a></li>
 				
