@@ -63,48 +63,7 @@
 			
 			<?php }//end if
 		?>
-		<?php 
-	// Header for Front Page
-			if(is_front_page()){
-
-			$thumb = array("_assets_production/images/hero/JL_cover-450x286.jpg","_assets_production/images/hero/SS_cover-450x286.jpg","_assets_production/images/hero/JL2_cover-450x286.jpg","_assets_production/images/hero/CG_cover-450x286.jpg");
-			$it = rand(0, count($thumb)-1);
-  			$thumbBG = "$thumb[$it]";
-
-  			$small = array("_assets_production/images/hero/JL_cover-600x381.jpg","_assets_production/images/hero/SS_cover-600x381.jpg", "_assets_production/images/hero/JL2_cover-600x381.jpg","_assets_production/images/hero/CG_cover-600x381.jpg");
-			$is = rand(0, count($small)-1);
-  			$smallBG = "$small[$is]";
-
-  			$medium = array("_assets_production/images/hero/JL_cover-800x509.jpg","_assets_production/images/hero/SS_cover-800x509.jpg"."_assets_production/images/hero/JL2_cover-800x509.jpg","_assets_production/images/hero/CG_cover-800x509.jpg");
-			$im = rand(0, count($medium)-1);
-  			$mediumBG = "$medium[$im]";
-
-  			$large = array("_assets_production/images/hero/JL_cover-1000x636.jpg","_assets_production/images/hero/SS_cover-1000x636.jpg","_assets_production/images/hero/JL2_cover-1000x636.jpg","_assets_production/images/hero/CG_cover-1000x636.jpg");
-			$il = rand(0, count($large)-1);
-  			$largeBG = "$large[$il]";
-
-  			$largetwo = array("_assets_production/images/hero/JL_cover-1000x636.jpg","_assets_production/images/hero/SS_cover-1200x763.jpg", "_assets_production/images/hero/JL2_cover-1000x636.jpg","_assets_production/images/hero/CG_cover-1000x636.jpg");
-			$iltwo = rand(0, count($largetwo)-1);
-  			$largetwoBG = "$largetwo[$iltwo]";
-
-			$full = array("_assets_production/images/hero/JL_cover-1400x890.jpg","_assets_production/images/hero/SS_cover-1400x890.jpg", "_assets_production/images/hero/JL2_cover-1400x890.jpg","_assets_production/images/hero/CG_cover-1400x890.jpg");
-			$if = rand(0, count($full)-1);
-  			$fullBG = "$full[$if]";
-			
-			?>
-			<style type="text/css">
-				.home.hero{ background-image: url(<?php echo get_stylesheet_directory_uri() . '/' . $thumbBG; ?>); background-size:cover; background-repeat:none; background-position:top center;}
-				@media screen and (min-width: 36em){ .home.hero{ background-image: url(<?php echo get_stylesheet_directory_uri() . '/' . $smallBG; ?>); padding-top:6em; padding-bottom:6em; } }
-				@media screen and (min-width: 48em){ .home.hero{ background-image: url(<?php echo get_stylesheet_directory_uri() . '/' . $mediumBG; ?>); padding-top:9em; padding-bottom:9em; } }
-				@media screen and (min-width: 60em){ .home.hero{ background-image: url(<?php echo get_stylesheet_directory_uri() . '/' . $largeBG; ?>); padding-top:12em; padding-bottom:12em; } }
-				@media screen and (min-width: 70em){ .home.hero{ background-image: url(<?php echo get_stylesheet_directory_uri() . '/' . $largetwoBG; ?>); padding-top:12em; padding-bottom:12em; } }
-				@media screen and (min-width: 80em){ .home.hero{ background-image: url(<?php echo get_stylesheet_directory_uri() . '/' . $fullBG; ?>); padding-top:15em; padding-bottom:15em; } }
-			</style>
-			<?php }//endif
-		?>
-		<?php 
-	// Header For Posts and Portfolio
-			if(! is_front_page()){
+		<?php
 			if ( get_query_var('paged') ) $paged = get_query_var('paged');  
 			$query = new WP_Query( array( 'post_type' => 'portfolio', 'featured' => 'main', 'paged' => $paged ) );
 			if ( $query->have_posts() ) : ?>
@@ -156,7 +115,5 @@
 			<?php endwhile; wp_reset_postdata(); ?>
 
 		<?php endif; ?>
-		<?php }//end if
-		?>
 	</head>
 	<body <?php body_class(); ?>>

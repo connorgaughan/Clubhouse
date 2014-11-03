@@ -3,7 +3,9 @@
 	<div class="fixed">
 		<div class="container">
 			<a class="icon-logo" href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a>
-			<i class='icon-menu'></i>		
+			<div class="icon-menu-wrapper">
+				<i class='icon-menu'></i>		
+			</div>
 		</div>
 	</div>
 </header>

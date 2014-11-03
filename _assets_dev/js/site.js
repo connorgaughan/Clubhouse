@@ -32,3 +32,9 @@ jQuery(document).ready(function($) {
 	});
 	jQuery('.lead').addClass('js');
 });
+
+jQuery(document).keyup(function(e){
+	if ( jQuery('.main-menu').is(':visible') && e.keyCode == 27 ){
+		jQuery('.main-menu').fadeOut('slow');
+	}
+});
